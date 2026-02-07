@@ -7,5 +7,7 @@ fn main() {
     io::stdin()
         .read_line(&mut category)
         .expect("Failed to read line");
+    // Trime whitespace from `category`.
+    let category = category.trim();
     println!("The category is \"{category}\"");
 }
