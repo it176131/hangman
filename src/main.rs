@@ -13,4 +13,6 @@ fn main() {
     let word = rpassword::prompt_password("Player 1, give me a word in the category:")
         .unwrap();
     println!("The word is \"{word}\"");
+    let len = word.chars().count();
+    println!("There are {len} letters in the word.");
 }
