@@ -23,6 +23,10 @@ fn main() {
             .read_line(&mut letter)
             .expect("Failed to read line");
         let letter = letter.trim();
+        if letter.chars().count() != 1 {
+            println!("Must enter a single letter.");
+            continue
+        }
         println!("The letter is \"{letter}\"");
         match word.contains(letter) {
             true => println!("The word contains the letter {letter}."),
