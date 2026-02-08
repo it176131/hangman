@@ -22,7 +22,8 @@ fn main() {
         .expect("Failed to read line");
     let letter = letter.trim();
     println!("The letter is \"{letter}\"");
-    if word.contains(letter) {
-        println!("The word contains the letter {letter}.");
+    match word.contains(letter) {
+        true => println!("The word contains the letter {letter}."),
+        false => println!("The word does _not_ contain the letter {letter}."),
     }
 }
