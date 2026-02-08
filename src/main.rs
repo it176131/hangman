@@ -15,6 +15,7 @@ fn main() {
     println!("The word is \"{word}\"");
     let len = word.chars().count();
     println!("There are {len} letters in the word.");
+    let mut incorrect: u8 = 0;
     println!("Player 2, guess a letter:");
     let mut letter = String::new();
     io::stdin()
@@ -24,6 +25,10 @@ fn main() {
     println!("The letter is \"{letter}\"");
     match word.contains(letter) {
         true => println!("The word contains the letter {letter}."),
-        false => println!("The word does _not_ contain the letter {letter}."),
+        false => {
+            println!("The word does _not_ contain the letter {letter}.");
+            incorrect += 1;
+            println!("Total incorrect: {incorrect}");
+        },
     }
 }
