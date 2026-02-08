@@ -15,4 +15,11 @@ fn main() {
     println!("The word is \"{word}\"");
     let len = word.chars().count();
     println!("There are {len} letters in the word.");
+    println!("Player 2, guess a letter:");
+    let mut letter = String::new();
+    io::stdin()
+        .read_line(&mut letter)
+        .expect("Failed to read line");
+    let letter = letter.trim();
+    println!("The letter is \"{letter}\"");
 }
